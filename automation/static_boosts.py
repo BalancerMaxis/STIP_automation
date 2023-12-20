@@ -17,6 +17,11 @@ STATIC_BOOST = [
         "meta": {"symbol": "sFRAX-4POOL", "boostReason": "Innovation - ve80/20"},
     },
     {
+        "gaugeAddress": "0xBb1a15dfd849bc5a6F33C002999c8953aFA626Ad",
+        "fixedBoost": 1.5,
+        "meta": {"symbol": "4pool", "boostReason": "Innovation - ve80/20"},
+    },
+    {
         "gaugeAddress": "0x00b9bcd17cB049739D25FD7f826caA2E23b05620",
         "fixedBoost": 1.75,
         "capOverride": 20,
