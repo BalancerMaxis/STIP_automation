@@ -197,7 +197,7 @@ def generate_and_save_transaction(arb_gauge_distributions: Dict, start_date: dat
     return output_data
 
 
-def run_stip_pipeline() -> None:
+def run_stip_pipeline(end_date: int) -> None:
     """
     Main function to execute STIP calculations
     """
@@ -205,7 +205,7 @@ def run_stip_pipeline() -> None:
     # Calculate end date approx block height
 
     web3 = Web3(Web3.HTTPProvider(os.environ["ETHNODEURL"]))
-    end_date = datetime.fromtimestamp(1702512000)
+    end_date = datetime.fromtimestamp(end_date)
     start_date = end_date - timedelta(days=14)
     start_ts = int(start_date.timestamp())
     end_ts = int(end_date.timestamp())
