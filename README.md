@@ -11,10 +11,10 @@ Boosts and caps are defined per gauge in [arbitrumGrantGaugeMetadata.json](https
 ---
 
 ## Configuration and Data
-- [Emissions per year config](https://github.com/BalancerMaxis/data_automation/blob/main/notebooks/airdrop_arb_distribution/emissions_per_year.py)
-- [Static Boost Info](https://github.com/BalancerMaxis/data_automation/blob/main/notebooks/airdrop_arb_distribution/static_boosts.py)
-- [ARB amounts emitted](https://github.com/BalancerMaxis/data_automation/blob/main/notebooks/airdrop_arb_distribution/constants.py#L58)
-- [Output Data](https://github.com/BalancerMaxis/data_automation/tree/main/notebooks/airdrop_arb_distribution/output) is collected in output/ directory
+- [Emissions per year config](https://github.com/BalancerMaxis/STIP_automation/blob/main/automation/emissions_per_year.py)
+- [Static Boost Info](https://github.com/BalancerMaxis/STIP_automation/blob/main/automation/static_boosts.py)
+- [ARB amounts emitted](https://github.com/BalancerMaxis/STIP_automation/blob/main/automation/constants.py#L58)
+- [Output Data](https://github.com/BalancerMaxis/STIP_automation/tree/main/output) is collected in output/ directory
 
 ---
 
