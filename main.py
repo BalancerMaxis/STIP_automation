@@ -1,7 +1,8 @@
 from automation.dao_grant import run_stip_pipeline
 import argparse
 
-TS_NOW = 1702512000
+#TS_NOW = 1702512000
+TS_NOW = 1703721600 # 28-12-2023
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--ts_bound", help="Timestamp up to which to run", type=int, required=False)
