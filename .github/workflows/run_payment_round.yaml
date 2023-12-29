@@ -1,0 +1,43 @@
+name: Generate feeSweep payloads
+
+on:
+  workflow_dispatch:
+    inputs:
+      end_time_stamp:
+        description: 'The unix timestamp of the end of the period, should be a Thursday at 00:00 GMT'
+        require: true
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  TIMESTAMP: ${{ inputs.pr_number }}
+
+jobs:
+  genPayload:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/python
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Generate Payload and report
+      run: |
+        pip install -r requirements.txt
+        python3 main.py --ts_bound $TIMESTAMP
+
+    - name: Create PR
+      uses: peter-evans/create-pull-request@v5
+      with:
+        commit-message: "Generate  incentives run for ${{ github.event.inputs.end_time_stamp }}"
+        title: "Generate  incentives run for ${{ github.event.inputs.end_time_stamp }}"
+        assignees: tritium-vlk
+        branch: gha-payment-round
+        delete-branch: true
+        labels: "Automated PR"
+        branch-suffix: timestamp
