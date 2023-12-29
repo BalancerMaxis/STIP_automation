@@ -63,7 +63,7 @@ STATIC_BOOST = [
     {
         "gaugeAddress": "0xb66e8d615f8109ca52d47d9cb65fc4edcf9c1342",
         "fixedBoost": 1.75,
-        "capOverride": 20,
+        "capOverride": 10,
         "meta": {"symbol": "plsRDNT", "boostReason": "Core"},
     },
     {
