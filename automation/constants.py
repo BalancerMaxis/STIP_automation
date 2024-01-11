@@ -54,8 +54,8 @@ POOLS_SNAPSHOTS_QUERY = """
 
 CURRENT_YEAR = 2023
 
-ARBITRUM_BONUS = 22_500  # Constant pool of bonus arb
-ARBITRUM_TOTAL = 205714.8
+ARBITRUM_BONUS = 12000.0
+ARBITRUM_TOTAL = 82285.3
 
 DYNAMIC_BOOST_MULTIPLIER = 3
 MIN_BAL_IN_USD_FOR_BOOST = 200
@@ -75,15 +75,7 @@ GAUGES_WITH_BONUSES = {
         ),
         "symbol": "4POOL-BPT",
         "poolAddress": "0x423a1323c871abc9d89eb06855bf5347048fc4a5",
-        "bonus": 11_250,
-    },
-    Web3.to_checksum_address("0xa8Bb331a84032b156E5c670152A5Bd48f5DeC784"): {
-        "recipientGauge": Web3.to_checksum_address(
-            "0x138E37c3885169DB38e046D5c814C0e95566566c"
-        ),
-        "poolAddress": "0xa1a8bf131571a2139feb79401aa4a2e9482df627",
-        "symbol": "wstETH-4POOL",
-        "bonus": 5625.0,
+        "bonus": 2000.0,
     },
     Web3.to_checksum_address("0x62A82FE26E21a8807599374CaC8024fae342eF83"): {
         "recipientGauge": Web3.to_checksum_address(
@@ -91,6 +83,6 @@ GAUGES_WITH_BONUSES = {
         ),
         "poolAddress": "0x2ce4457acac29da4736ae6f5cd9f583a6b335c27",
         "symbol": "sFRAX-4POOL",
-        "bonus": 5625.0,
+        "bonus": 10000.0,
     },
 }
