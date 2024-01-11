@@ -54,8 +54,8 @@ POOLS_SNAPSHOTS_QUERY = """
 
 CURRENT_YEAR = 2023
 
-ARBITRUM_BONUS = 12000.0
-ARBITRUM_TOTAL = 82285.3
+ARBITRUM_BONUS = 10000.0
+ARBITRUM_TOTAL = 102856.625
 
 DYNAMIC_BOOST_MULTIPLIER = 3
 MIN_BAL_IN_USD_FOR_BOOST = 200
@@ -69,14 +69,6 @@ ARB_ROOT_GAUGE = Web3.to_checksum_address("0xBb1a15dfd849bc5a6F33C002999c8953aFA
 
 # gauge: poolAddress
 GAUGES_WITH_BONUSES = {
-    Web3.to_checksum_address("0xBb1a15dfd849bc5a6F33C002999c8953aFA626Ad"): {
-        "recipientGauge": Web3.to_checksum_address(
-            "0xa14453084318277b11d38FbE05D857A4f647442B"
-        ),
-        "symbol": "4POOL-BPT",
-        "poolAddress": "0x423a1323c871abc9d89eb06855bf5347048fc4a5",
-        "bonus": 2000.0,
-    },
     Web3.to_checksum_address("0x62A82FE26E21a8807599374CaC8024fae342eF83"): {
         "recipientGauge": Web3.to_checksum_address(
             "0x050fBe33699E56B577c3D6f090eCE9870A0966bd"
