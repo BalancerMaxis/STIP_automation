@@ -37,8 +37,8 @@ jobs:
     - name: Create PR
       uses: peter-evans/create-pull-request@v5
       with:
-        commit-message: "Generate  incentives run for ${{ github.event.inputs.end_time_stamp }}"
-        title: "Generate  incentives run for ${{ github.event.inputs.end_time_stamp }}"
+        commit-message: "Generate  incentives run for ${{ github.event.inputs.epoch_end_date }}"
+        title: "Generate  incentives run for ${{ github.event.inputs.epoch_end_date }}"
         assignees: tritium-vlk
         branch: gha-payment-round
         delete-branch: true
