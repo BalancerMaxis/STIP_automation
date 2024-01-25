@@ -1,10 +1,10 @@
-name: Generate feeSweep payloads
+name: Generate STIP Epoch Paylods
 
 on:
   workflow_dispatch:
     inputs:
-      end_time_stamp:
-        description: 'The unix timestamp of the end of the period, should be a Thursday at 00:00 GMT'
+      epoch_end_date:
+        description: 'The date like YYYY-MM-DD that the epoch you wish to run for ended.  Should be a thursday aon a week when Aura voting concluded'
         require: true
 
 env:
@@ -28,6 +28,9 @@ jobs:
 
     - name: Generate Payload and report
       run: |
+        DAY=${{ github.event.inputs.epoch_end_date }}
+        TIMESTAMP=${date -d $DAY 00:00:00}
+        echo "Running for $DAY $TIMESTAMP"
         pip install -r requirements.txt
         python3 main.py --ts_bound $TIMESTAMP
 
