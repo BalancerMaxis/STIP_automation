@@ -26,7 +26,7 @@ jobs:
     - name: Generate Payload and report
       run: |
         DAY=${{ github.event.inputs.epoch_end_date }}
-        TIMESTAMP=${date -d "$DAY 00:00:00"}
+        TIMESTAMP=$(date -d "$DAY 00:00:00")
         echo "Running for $DAY $TIMESTAMP"
         pip install -r requirements.txt
         python3 main.py --ts_bound $TIMESTAMP
