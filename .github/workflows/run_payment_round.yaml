@@ -14,7 +14,6 @@ env:
 jobs:
   genPayload:
     runs-on: ubuntu-latest
-    defaults:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
