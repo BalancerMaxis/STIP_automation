@@ -24,6 +24,8 @@ jobs:
         python-version: 3.9
 
     - name: Generate Payload and report
+      env:
+        ETHNODEURL: ${{ secrets.ETHNODEURL }}
       run: |
         DAY=${{ github.event.inputs.epoch_end_date }}
         TIMESTAMP=$(date -d "$DAY 00:00:00" +"%s")
