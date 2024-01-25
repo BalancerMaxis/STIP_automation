@@ -14,9 +14,6 @@ env:
 jobs:
   genPayload:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: tools/python
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -27,9 +24,11 @@ jobs:
         python-version: 3.9
 
     - name: Generate Payload and report
+      env:
+        ETHNODEURL: ${{ secrets.ETHNODEURL }}
       run: |
         DAY=${{ github.event.inputs.epoch_end_date }}
-        TIMESTAMP=${date -d $DAY 00:00:00}
+        TIMESTAMP=$(date -d "$DAY 00:00:00" +"%s")
         echo "Running for $DAY $TIMESTAMP"
         pip install -r requirements.txt
         python3 main.py --ts_bound $TIMESTAMP
