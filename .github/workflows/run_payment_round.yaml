@@ -1,0 +1,46 @@
+name: Generate STIP Epoch Paylods
+
+on:
+  workflow_dispatch:
+    inputs:
+      epoch_end_date:
+        description: 'The date like YYYY-MM-DD that the epoch you wish to run for ended.  Should be a thursday aon a week when Aura voting concluded'
+        require: true
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  TIMESTAMP: ${{ inputs.pr_number }}
+
+jobs:
+  genPayload:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/python
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Generate Payload and report
+      run: |
+        DAY=${{ github.event.inputs.epoch_end_date }}
+        TIMESTAMP=${date -d $DAY 00:00:00}
+        echo "Running for $DAY $TIMESTAMP"
+        pip install -r requirements.txt
+        python3 main.py --ts_bound $TIMESTAMP
+
+    - name: Create PR
+      uses: peter-evans/create-pull-request@v5
+      with:
+        commit-message: "Generate  incentives run for ${{ github.event.inputs.epoch_end_date }}"
+        title: "Generate  incentives run for ${{ github.event.inputs.epoch_end_date }}"
+        assignees: tritium-vlk
+        branch: gha-payment-round
+        delete-branch: true
+        labels: "Automated PR"
+        branch-suffix: timestamp
