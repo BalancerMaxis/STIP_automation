@@ -43,14 +43,17 @@ Pools in this section may move to the "Integrations" category after some time.
 
 ### Variable Fee Based Boost (1-3x)
 The variable boost is determined by using the following formula:
-`dynamic_boost = (pool_protocol_fees.get(gauge_addr) * 3
-                             / dollar_value_of_bal_emitted) + 1`
-Variable Boost = **_Fees earned/value of BAL emitted + 1_**
+```
+dynamic_boost = (pool_protocol_fees.get(gauge_addr) * 3
+                             / dollar_value_of_bal_emitted) + 1
+```
+                             
+`Variable Boost = **_Fees earned/value of BAL emitted + 1_**`
 
 The variable boosted has a minimum of 1.
 
 The fee based boost is added to the fixed boost, so:
 
-Total Boost = **_Fixed Boost + Variable Boost - 1_** 
+`Total Boost = Fixed Boost + Variable Boost - 1 `
 
 where both boosts are >=1 it will be automatically computed by the model and applied. 
