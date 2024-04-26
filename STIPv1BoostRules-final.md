@@ -1,10 +1,10 @@
 # $ARB Liquidity incentives program override rules
 
-The incentives program pays out 97,704 per week ARB based on veBAL voting for pools on Arbitrum.
+The incentives program pays out 41142.65 per week ARB based on veBAL voting for pools on Arbitrum.
 
 The vote weight per pool is multiplied by a boost factor, then ARB is distributed to all pools based on their relative boosted weight.
 
-Pools are capped at 10% of the total weekly $ARB, except for ETH based LSD stableswap pools which are capped at 20%
+Pools are capped at 10% of the total weekly $ARB, except for ETH based LSD stableswap pools which are capped at 20%.
 
 Boosts and caps are defined per gauge in [arbitrumGrantGaugeMetadata.json](arbitrumGrantGuageMetadata.json)
 ## How boost is calculated
