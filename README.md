@@ -52,7 +52,7 @@ Pools in this section may move to the "Integrations" category after some time.
 ### Variable Fee Based Boost (1-3x)
 The variable boost is determined by using the following formula:
 
-Variable Boost = **_Fees earned/value of BAL emitted + 1_**
+Variable Boost = ** (Fees Earned * 3) / (USD Value of BAL emitted + 1)**
 
 The variable boosted is capped at 3 and has a minimum of 1.
 
